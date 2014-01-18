@@ -39,19 +39,12 @@
     }
 }
 
-- (UIStatusBarStyle)preferredStatusBarStyle
-{
-    // This ViewController is content of NavigationController or TabController.
-    // So preferredStatusBarStyle does not work.
-    return UIStatusBarStyleLightContent;
-}
-
-- (BOOL)prefersStatusBarHidden
+- (void)viewWillAppear:(BOOL)animated
 {
     if ([self.title isEqualToString:@"Tab3"]) {
-        return YES;
+        [[UIApplication sharedApplication] setStatusBarHidden:YES];
     } else {
-        return NO;
+        [[UIApplication sharedApplication] setStatusBarHidden:NO];
     }
 }
 

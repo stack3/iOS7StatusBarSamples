@@ -4,4 +4,7 @@
    <FileRef
       location = "group:STViewControllerBasedStatusBarSample/STViewControllerBasedStatusBarSample.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:STNonViewControllerBasedStatusBarSample/STNonViewControllerBasedStatusBarSample.xcodeproj">
+   </FileRef>
 </Workspace>

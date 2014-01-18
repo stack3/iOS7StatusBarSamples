@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="STViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8n3-5j-LmV"/>
+                        <viewControllerLayoutGuide type="bottom" id="zSf-sd-rMu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e2h-4j-TVy">
+                                <rect key="frame" x="20" y="40" width="280" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="NavigationController">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tCp-LT-B2U">
+                                <rect key="frame" x="20" y="81" width="280" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="TabBarController">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="e2h-4j-TVy" firstAttribute="top" secondItem="8n3-5j-LmV" secondAttribute="bottom" constant="20" id="3bv-hB-SLd"/>
+                            <constraint firstAttribute="trailing" secondItem="e2h-4j-TVy" secondAttribute="trailing" constant="20" id="FG8-wd-gw2"/>
+                            <constraint firstItem="e2h-4j-TVy" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="RN5-yE-LCL"/>
+                            <constraint firstAttribute="trailing" secondItem="tCp-LT-B2U" secondAttribute="trailing" constant="20" id="V14-WG-ojo"/>
+                            <constraint firstItem="tCp-LT-B2U" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="V8M-TI-Mfp"/>
+                            <constraint firstItem="tCp-LT-B2U" firstAttribute="top" secondItem="e2h-4j-TVy" secondAttribute="bottom" constant="8" id="nze-O9-xfC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="navigationControllerButton" destination="e2h-4j-TVy" id="sVA-Cs-LL2"/>
+                        <outlet property="tabBarControllerButton" destination="tCp-LT-B2U" id="m87-0r-Ras"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
