@@ -46,13 +46,4 @@
     return UIStatusBarStyleLightContent;
 }
 
-- (BOOL)prefersStatusBarHidden
-{
-    if ([self.title isEqualToString:@"Tab3"]) {
-        return YES;
-    } else {
-        return NO;
-    }
-}
-
 @end

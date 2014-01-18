@@ -39,13 +39,4 @@
     }
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    if ([self.title isEqualToString:@"Tab3"]) {
-        [[UIApplication sharedApplication] setStatusBarHidden:YES];
-    } else {
-        [[UIApplication sharedApplication] setStatusBarHidden:NO];
-    }
-}
-
 @end

@@ -13,6 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *navigationControllerButton;
 @property (weak, nonatomic) IBOutlet UIButton *tabBarControllerButton;
+@property (weak, nonatomic) IBOutlet UIButton *hideStatusBarButton;
 
 @end
 
@@ -24,6 +25,7 @@
     
     [_navigationControllerButton addTarget:self action:@selector(didTapNavigationControllerButton) forControlEvents:UIControlEventTouchUpInside];
     [_tabBarControllerButton addTarget:self action:@selector(didTapTabBarControllerButton) forControlEvents:UIControlEventTouchUpInside];
+    [_hideStatusBarButton addTarget:self action:@selector(didTapHideStatusBarButton) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)didTapNavigationControllerButton
@@ -59,6 +61,16 @@
     UITabBarController *tabBarCon = [[UITabBarController alloc] init];
     tabBarCon.viewControllers = @[naviCon1, naviCon2, naviCon3];
     [self presentViewController:tabBarCon animated:YES completion:nil];
+}
+
+- (void)didTapHideStatusBarButton
+{
+    UIApplication *app = [UIApplication sharedApplication];
+    if (app.isStatusBarHidden) {
+        [app setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
+    } else {
+        [app setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
+    }
 }
 
 @end

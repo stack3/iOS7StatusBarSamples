@@ -32,18 +32,29 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GSN-oJ-S3o">
+                                <rect key="frame" x="20" y="122" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Hide StatusBar">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="e2h-4j-TVy" firstAttribute="top" secondItem="8n3-5j-LmV" secondAttribute="bottom" constant="20" id="3bv-hB-SLd"/>
                             <constraint firstAttribute="trailing" secondItem="e2h-4j-TVy" secondAttribute="trailing" constant="20" id="FG8-wd-gw2"/>
+                            <constraint firstAttribute="trailing" secondItem="GSN-oJ-S3o" secondAttribute="trailing" constant="20" id="MqU-yy-gC7"/>
                             <constraint firstItem="e2h-4j-TVy" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="RN5-yE-LCL"/>
                             <constraint firstAttribute="trailing" secondItem="tCp-LT-B2U" secondAttribute="trailing" constant="20" id="V14-WG-ojo"/>
                             <constraint firstItem="tCp-LT-B2U" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="V8M-TI-Mfp"/>
+                            <constraint firstItem="GSN-oJ-S3o" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="agA-Pq-NnA"/>
+                            <constraint firstItem="GSN-oJ-S3o" firstAttribute="top" secondItem="tCp-LT-B2U" secondAttribute="bottom" constant="8" id="fZ1-UT-Nmq"/>
                             <constraint firstItem="tCp-LT-B2U" firstAttribute="top" secondItem="e2h-4j-TVy" secondAttribute="bottom" constant="8" id="nze-O9-xfC"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="hideStatusBarButton" destination="GSN-oJ-S3o" id="8qd-OU-8aY"/>
                         <outlet property="navigationControllerButton" destination="e2h-4j-TVy" id="sVA-Cs-LL2"/>
                         <outlet property="tabBarControllerButton" destination="tCp-LT-B2U" id="m87-0r-Ras"/>
                     </connections>

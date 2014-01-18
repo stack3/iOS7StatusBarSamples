@@ -13,6 +13,8 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *navigationControllerButton;
 @property (weak, nonatomic) IBOutlet UIButton *tabBarControllerButton;
+@property (weak, nonatomic) IBOutlet UIButton *hideStatusBarButton;
+@property (nonatomic) BOOL currentStatusBarHidden;
 
 @end
 
@@ -23,12 +25,35 @@
     return UIStatusBarStyleLightContent;
 }
 
+- (BOOL)prefersStatusBarHidden
+{
+    return _currentStatusBarHidden;
+}
+
+- (void)setCurrentStatusBarHidden:(BOOL)currentStatusBarHidden animated:(BOOL)animated
+{
+    _currentStatusBarHidden = currentStatusBarHidden;
+    if (animated) {
+        [UIView animateWithDuration:0.3 animations:^{
+            [self setNeedsStatusBarAppearanceUpdate];
+        }];
+    } else {
+        [self setNeedsStatusBarAppearanceUpdate];
+    }
+}
+
+- (UIStatusBarAnimation)preferredStatusBarUpdateAnimation
+{
+    return UIStatusBarAnimationSlide;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
     [_navigationControllerButton addTarget:self action:@selector(didTapNavigationControllerButton) forControlEvents:UIControlEventTouchUpInside];
     [_tabBarControllerButton addTarget:self action:@selector(didTapTabBarControllerButton) forControlEvents:UIControlEventTouchUpInside];
+    [_hideStatusBarButton addTarget:self action:@selector(didTapHideStatusBarButton) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)didTapNavigationControllerButton
@@ -64,6 +89,16 @@
     UITabBarController *tabBarCon = [[UITabBarController alloc] init];
     tabBarCon.viewControllers = @[naviCon1, naviCon2, naviCon3];
     [self presentViewController:tabBarCon animated:YES completion:nil];
+}
+
+- (void)didTapHideStatusBarButton
+{
+    [self setCurrentStatusBarHidden:!_currentStatusBarHidden animated:YES];
+    if (_currentStatusBarHidden) {
+        [_hideStatusBarButton setTitle:@"Show StatusBar" forState:UIControlStateNormal];
+    } else {
+        [_hideStatusBarButton setTitle:@"Hide StatusBar" forState:UIControlStateNormal];
+    }
 }
 
 @end
